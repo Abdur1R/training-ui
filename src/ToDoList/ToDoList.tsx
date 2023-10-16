@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 import Task from './Task';
 import AddTask from './AddTask';
+import { Tabs } from "antd";
 import "./ToDoList.scss";
+
+const { TabPane } = Tabs;
 
 const TodoList = () => {
     console.log("In To Do LiST");
     const [state, setState] = useState({
         tasks: [
-            { id: 1, task: 'Buy groceries' },
-            { id: 2, task: 'Go for a walk' }
+            { id: 1, task: 'Buy groceries', completed: false },
+            { id: 2, task: 'Go for a walk', completed: false }
         ],
         filter: 'all',
     });
 
     const handleAddTask = (task: any) => {
         const tasks = [...state.tasks];
-        tasks.push({ id: tasks.length + 1, task });
+        tasks.push({ id: tasks.length + 1, task, completed: false });
         setState({ ...state, tasks });
     };
 
@@ -30,14 +33,15 @@ const TodoList = () => {
         setState({ ...state, tasks });
     };
 
-    const getFilteredTasks = () => {
-        const { tasks, filter } = state;
+    const getFilteredTasks = (key: string) => {
+        const { tasks } = state;
 
-        switch (filter) {
+        switch (key) {
             case 'completed':
                 return tasks.filter((task: any) => task.completed);
             case 'incomplete':
                 return tasks.filter((task: any) => !task.completed);
+            case 'all':
             default:
                 return tasks;
         }
@@ -56,14 +60,36 @@ const TodoList = () => {
     };
 
     const { tasks, filter } = state;
-    const filteredTasks = getFilteredTasks();
+    // const filteredTasks = getFilteredTasks();
     console.log("Tasks", tasks);
 
     return (
         <div className='to-do-list'>
             <h1>To-Do List</h1>
             <AddTask onAddTask={handleAddTask} />
-            <div>
+            <div className='card'>
+                <Tabs onChange={handleFilterChange}>
+                    <TabPane tab="All" key="all">
+                        {getFilteredTasks('all').map((task: any, index: number) => (
+                            <Task id={index + 1} task={task} onToggleCompleted={handleToggleCompleted} onDeleteTask={handleDeleteTask} />
+                        )
+                        )}
+                    </TabPane>
+                    <TabPane tab="Completed" key="completed">
+                        {getFilteredTasks('completed').map((task: any, index: number) => (
+                            <Task id={index + 1} task={task} onToggleCompleted={handleToggleCompleted} onDeleteTask={handleDeleteTask} />
+                        )
+                        )}
+                    </TabPane>
+                    <TabPane tab="In-Complete" key="incomplete">
+                        {getFilteredTasks('incomplete').map((task: any, index: number) => (
+                            <Task id={index + 1} task={task} onToggleCompleted={handleToggleCompleted} onDeleteTask={handleDeleteTask} />
+                        )
+                        )}
+                    </TabPane>
+                </Tabs>
+            </div>
+            {/* <div>
                 <button onClick={() => handleFilterChange('all')} disabled={filter === 'all'}>
                     All
                 </button>
@@ -73,10 +99,7 @@ const TodoList = () => {
                 <button onClick={() => handleFilterChange('incomplete')} disabled={filter === 'incomplete'}>
                     Incomplete
                 </button>
-            </div>
-            {filteredTasks.map((task: any) => (
-                <Task key={task.id} task={task} onToggleCompleted={handleToggleCompleted} onDeleteTask={handleDeleteTask} />
-            ))}
+            </div> */}
         </div>
     );
 }

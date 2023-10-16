@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import AllRoutes from './AllRoutes.tsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import "./global.scss";
 
 const App = () => (
     <div className="App">
