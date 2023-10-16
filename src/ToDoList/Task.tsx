@@ -11,8 +11,8 @@ const Task = (props: any) => {
                     {props.task.task}
                 </div>
                 <div className='delete-done'>
-                    <button onClick={() => props.onDeleteTask(props.id)}>Delete</button>
-                    <button onClick={() => props.onToggleCompleted(props.id)}>Done</button>
+                    <button onClick={() => props.onDeleteTask(props.task.task)}>Delete</button>
+                    <button onClick={() => props.onToggleCompleted(props.task.task)}>Done</button>
                 </div>
             </div>
         </li>

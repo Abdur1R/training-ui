@@ -22,9 +22,9 @@ const TodoList = () => {
         setState({ ...state, tasks });
     };
 
-    const handleDeleteTask = (id: any) => {
+    const handleDeleteTask = (taskName: any) => {
         const tasks = [...state.tasks];
-        const index = tasks.findIndex(task => task.id === id);
+        const index = tasks.findIndex(task => task.task === taskName);
         tasks.splice(index, 1);
         setState({ ...state, tasks });
     };
@@ -47,15 +47,15 @@ const TodoList = () => {
         }
     };
 
-    const handleToggleCompleted = (id: any) => {
+    const handleToggleCompleted = (taskName: any) => {
         const { tasks }: any = state;
-        const index = tasks.findIndex((task: any) => task.id === id);
-        const updatedTasks = [
-            ...tasks.slice(0, index),
-            { ...tasks[index], completed: !tasks[index].completed },
-            ...tasks.slice(index + 1)
-        ];
-
+        // const index = tasks.findIndex((task: any) => task.task === taskName);
+        const updatedTasks = tasks.map((task: any) => {
+            if (task.task === taskName) {
+                return { ...task, completed: true };
+            }
+            return task;
+        });
         setState({ ...state, tasks: updatedTasks });
     };
 
