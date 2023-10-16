@@ -16,7 +16,7 @@ const SignUp = () => {
     const onSubmit = (values: any) => {
         console.log("values", values);
         console.log("FieldValues", form.getFieldsValue());
-        sessionStorage.setItem("userData", values);
+        sessionStorage.setItem("userData", JSON.stringify(values));
     };
 
     return (
