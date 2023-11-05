@@ -1,3 +1,4 @@
+import LandingPage from "./LandingPage/LandingPage.tsx";
 import SignIn from "./SignIn/SignIn.tsx";
 import SignUp from "./SignUp/SignUp.tsx";
 import TodoList from "./ToDoList/ToDoList.tsx";
@@ -14,6 +15,10 @@ const AllRoutes = [
     {
         path: "/todolist",
         component: TodoList,
+    },
+    {
+        path: '/',
+        component: LandingPage,
     }
 ];
 
