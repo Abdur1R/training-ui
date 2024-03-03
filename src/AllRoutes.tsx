@@ -1,3 +1,5 @@
+import ChatAPI from "./ChatAPI/ChatAPI.tsx";
+import Heart from "./Heart/Heart.tsx";
 import LandingPage from "./LandingPage/LandingPage.tsx";
 import SignIn from "./SignIn/SignIn.tsx";
 import SignUp from "./SignUp/SignUp.tsx";
@@ -19,6 +21,14 @@ const AllRoutes = [
     {
         path: '/',
         component: LandingPage,
+    },
+    {
+        path: "/chatapi",
+        component: ChatAPI,
+    },
+    {
+        path: "/heart",
+        component: Heart,
     }
 ];
 
