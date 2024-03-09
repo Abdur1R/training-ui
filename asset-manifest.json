@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/training-ui/static/css/main.265c47eb.css",
+    "main.js": "/training-ui/static/js/main.bcef5e98.js",
+    "static/js/787.05bc4f41.chunk.js": "/training-ui/static/js/787.05bc4f41.chunk.js",
+    "static/media/background-img.gif": "/training-ui/static/media/background-img.0315d737e1cb4a720c7b.gif",
+    "static/media/to-do-list.svg": "/training-ui/static/media/to-do-list.762df6b53260f3f8b5067b359af23de3.svg",
+    "index.html": "/training-ui/index.html",
+    "main.265c47eb.css.map": "/training-ui/static/css/main.265c47eb.css.map",
+    "main.bcef5e98.js.map": "/training-ui/static/js/main.bcef5e98.js.map",
+    "787.05bc4f41.chunk.js.map": "/training-ui/static/js/787.05bc4f41.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.265c47eb.css",
+    "static/js/main.bcef5e98.js"
+  ]
+}
