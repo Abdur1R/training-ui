@@ -8,18 +8,16 @@ import AppLayout from "./AppLayout.tsx";
 const App = () => (
     <div className="App">
         <AppLayout>
-            <BrowserRouter>
-                <Routes>
-                    {
-                        AllRoutes.map((item: any, index: number) => (
-                            <Route
-                                path={item.path}
-                                Component={item.component}
-                            />
-                        ))
-                    }
-                </Routes>
-            </BrowserRouter>
+            <Routes>
+                {
+                    AllRoutes.map((item: any, index: number) => (
+                        <Route
+                            path={item.path}
+                            Component={item.component}
+                        />
+                    ))
+                }
+            </Routes>
         </AppLayout>
     </div>
 );
