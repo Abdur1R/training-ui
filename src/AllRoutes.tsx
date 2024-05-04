@@ -1,3 +1,4 @@
+import Calci from "./Calculator/Calci.tsx";
 import ChatAPI from "./ChatAPI/ChatAPI.tsx";
 import Heart from "./Heart/Heart.tsx";
 import LandingPage from "./LandingPage/LandingPage.tsx";
@@ -29,6 +30,10 @@ const AllRoutes = [
     {
         path: "/heart",
         component: Heart,
+    },
+    {
+        path: "/calculator",
+        component: Calci,
     }
 ];
 

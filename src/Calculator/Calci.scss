@@ -1,0 +1,27 @@
+.calci {
+    margin: 6% 36%;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+
+    .display {
+        margin: 20px;
+        // border: 1px solid grey;
+        height: 15%;
+    }
+
+    .bodyKeys {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px;
+        border: 1px solid grey;
+        height: 85%;
+
+        .buttonKey {
+            width: 30%;
+            height: auto;
+        }
+    }
+}
