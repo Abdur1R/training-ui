@@ -2,13 +2,8 @@ import { useForm } from "antd/es/form/Form";
 import React from "react";
 import { Button, Form, Input } from "antd";
 import "./SignUp.scss";
+import { FormItem } from "../CommonFiles/CommonComponents";
 // import BackgroundImg from "../GIFs/background-img.gif";
-
-const FormItem = ({ label, margin, padding }: { label: string, margin?: string, padding?: string }) => (
-    <Form.Item style={{ margin: margin, padding: padding }} label={label} name={label}>
-        <Input />
-    </Form.Item >
-);
 
 const SignUp = () => {
     const [form] = useForm();
