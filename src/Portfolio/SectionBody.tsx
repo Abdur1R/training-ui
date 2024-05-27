@@ -1,3 +1,5 @@
+import React from "react";
+
 const SectionBody = ({ head, body, subHead, id }: { head: string, body: string, subHead: string, id: string }) => (
     <div className="section" id={id}>
         {head &&
