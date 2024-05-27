@@ -2,6 +2,7 @@ import Calci from "./Calculator/Calci.tsx";
 import ChatAPI from "./ChatAPI/ChatAPI.tsx";
 import Heart from "./Heart/Heart.tsx";
 import LandingPage from "./LandingPage/LandingPage.tsx";
+import PortFolio from "./Portfolio/Portfolio.tsx";
 import SignIn from "./SignIn/SignIn.tsx";
 import SignUp from "./SignUp/SignUp.tsx";
 import TodoList from "./ToDoList/ToDoList.tsx";
@@ -34,6 +35,10 @@ const AllRoutes = [
     {
         path: "/calculator",
         component: Calci,
+    },
+    {
+        path: "/portfolio/:section",
+        component: PortFolio,
     }
 ];
 

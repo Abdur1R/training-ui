@@ -3,8 +3,8 @@ import "./AppLayout.scss";
 
 const AppLayout = ({ children }: any) => (
     <>
-        <div className="mainHeader">
-        </div>
+        {/* <div className="mainHeader">
+        </div> */}
         <div>
             {children}
         </div>
