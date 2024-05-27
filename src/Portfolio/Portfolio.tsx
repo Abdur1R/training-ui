@@ -2,6 +2,7 @@ import React from "react";
 import SideBar from "./SideBar";
 import "./PortFolio.scss";
 import ProfilePic from "../Pictures/pic.png";
+import SectionBody from "./SectionBody";
 
 const PortFolio = () => {
     return (
@@ -41,21 +42,36 @@ const PortFolio = () => {
                 />
             </div>
             <div className="portfolio-body">
-                <div className="section" id="/portfolio/about">
-                    About
-                </div>
-                <div className="section" id="/portfolio/experience">
-                    Experience
-                </div>
-                <div className="section" id="/portfolio/education">
-                    Education
-                </div>
-                <div className="section" id="/portfolio/skills">
-                    Skills
-                </div>
-                <div className="section" id="/portfolio/contact">
-                    Contact
-                </div>
+                <SectionBody
+                    head={"About"}
+                    body={"jhgdhjgjhgdjkewhdkwejhdkjwehkdjwe,msnjsmsbsjdjdgdjhgdwkjqdhkjqwhdkjhdbjhbdjbjdhdjhdjewgcjygwdvhcsmdc"}
+                    subHead={""}
+                    id={"/portfolio/about"}
+                />
+                <SectionBody
+                    head={"Experience"}
+                    body={"jhgdhjgjhgdjkewhdkwejhdkjwehkdjwe,msnjsmsbsjdjdgdjhgdwkjqdhkjqwhdkjhdbjhbdjbjdhdjhdjewgcjygwdvhcsmdc"}
+                    subHead={""}
+                    id={"/portfolio/experience"}
+                />
+                <SectionBody
+                    head={"Education"}
+                    body={"jhgdhjgjhgdjkewhdkwejhdkjwehkdjwe,msnjsmsbsjdjdgdjhgdwkjqdhkjqwhdkjhdbjhbdjbjdhdjhdjewgcjygwdvhcsmdc"}
+                    subHead={""}
+                    id={"/portfolio/education"}
+                />
+                <SectionBody
+                    head={"Skills"}
+                    body={"jhgdhjgjhgdjkewhdkwejhdkjwehkdjwe,msnjsmsbsjdjdgdjhgdwkjqdhkjqwhdkjhdbjhbdjbjdhdjhdjewgcjygwdvhcsmdc"}
+                    subHead={""}
+                    id={"/portfolio/skills"}
+                />
+                <SectionBody
+                    head={"Contact"}
+                    body={"jhgdhjgjhgdjkewhdkwejhdkjwehkdjwe,msnjsmsbsjdjdgdjhgdwkjqdhkjqwhdkjhdbjhbdjbjdhdjhdjewgcjygwdvhcsmdc"}
+                    subHead={""}
+                    id={"/portfolio/contact"}
+                />
             </div>
         </div>
     );
