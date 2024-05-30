@@ -3,6 +3,9 @@ import SideBar from "./SideBar";
 import "./PortFolio.scss";
 import ProfilePic from "../Pictures/pic.png";
 import SectionBody from "./SectionBody";
+import ExperienceSection from "./ExperienceSection";
+import EducationSection from "./EducationSection";
+import AboutSection from "./AboutSection";
 
 const PortFolio = () => {
     return (
@@ -44,31 +47,31 @@ const PortFolio = () => {
             <div className="portfolio-body">
                 <SectionBody
                     head={"About"}
-                    body={"jhgdhjgjhgdjkewhdkwejhdkjwehkdjwe,msnjsmsbsjdjdgdjhgdwkjqdhkjqwhdkjhdbjhbdjbjdhdjhdjewgcjygwdvhcsmdc"}
+                    body={<AboutSection />}
                     subHead={""}
                     id={"/portfolio/about"}
                 />
                 <SectionBody
-                    head={"Experience"}
-                    body={"jhgdhjgjhgdjkewhdkwejhdkjwehkdjwe,msnjsmsbsjdjdgdjhgdwkjqdhkjqwhdkjhdbjhbdjbjdhdjhdjewgcjygwdvhcsmdc"}
-                    subHead={""}
+                    head={"Professional Experience (2+ years)"}
+                    body={<ExperienceSection />}
+                    subHead={"Product Development Engineer - 1 , PHENOM"}
                     id={"/portfolio/experience"}
                 />
                 <SectionBody
                     head={"Education"}
-                    body={"jhgdhjgjhgdjkewhdkwejhdkjwehkdjwe,msnjsmsbsjdjdgdjhgdwkjqdhkjqwhdkjhdbjhbdjbjdhdjhdjewgcjygwdvhcsmdc"}
+                    body={<EducationSection />}
                     subHead={""}
                     id={"/portfolio/education"}
                 />
                 <SectionBody
                     head={"Skills"}
-                    body={"jhgdhjgjhgdjkewhdkwejhdkjwehkdjwe,msnjsmsbsjdjdgdjhgdwkjqdhkjqwhdkjhdbjhbdjbjdhdjhdjewgcjygwdvhcsmdc"}
+                    body={<ExperienceSection />}
                     subHead={""}
                     id={"/portfolio/skills"}
                 />
                 <SectionBody
                     head={"Contact"}
-                    body={"jhgdhjgjhgdjkewhdkwejhdkjwehkdjwe,msnjsmsbsjdjdgdjhgdwkjqdhkjqwhdkjhdbjhbdjbjdhdjhdjewgcjygwdvhcsmdc"}
+                    body={<ExperienceSection />}
                     subHead={""}
                     id={"/portfolio/contact"}
                 />

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { ReactComponentElement, ReactElement } from "react";
 
-const SectionBody = ({ head, body, subHead, id }: { head: string, body: string, subHead: string, id: string }) => (
+const SectionBody = ({ head, body, subHead, id }: { head: string, body: ReactElement<any, any>, subHead: string, id: string }) => (
     <div className="section" id={id}>
         {head &&
             <div className="head">
