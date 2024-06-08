@@ -1,0 +1,11 @@
+.git
+.gitignore
+.eslintcache
+.vscode
+build
+coverage
+dist
+node_modules
+README.md
+Dockerfile*
+docker-compose*
