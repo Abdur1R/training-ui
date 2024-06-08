@@ -6,6 +6,8 @@ import SectionBody from "./SectionBody";
 import ExperienceSection from "./ExperienceSection";
 import EducationSection from "./EducationSection";
 import AboutSection from "./AboutSection";
+import SkillSection from "./SkillSection";
+import LinkSection from "./LinkSection";
 
 const PortFolio = () => {
     return (
@@ -37,6 +39,11 @@ const PortFolio = () => {
                             title: 'Skills',
                         },
                         {
+                            key: 'links',
+                            href: '#/portfolio/links',
+                            title: 'Links',
+                        },
+                        {
                             key: 'contact',
                             href: '#/portfolio/contact',
                             title: 'Contact',
@@ -65,13 +72,19 @@ const PortFolio = () => {
                 />
                 <SectionBody
                     head={"Skills"}
-                    body={<ExperienceSection />}
+                    body={<SkillSection />}
                     subHead={""}
                     id={"/portfolio/skills"}
                 />
                 <SectionBody
+                    head={"Links"}
+                    body={<LinkSection />}
+                    subHead={""}
+                    id={"/portfolio/links"}
+                />
+                <SectionBody
                     head={"Contact"}
-                    body={<ExperienceSection />}
+                    body={<>+919866868600 | abdurrahmanshaik111@gmail.com | Hyderabad India</>}
                     subHead={""}
                     id={"/portfolio/contact"}
                 />
