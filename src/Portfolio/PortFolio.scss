@@ -3,6 +3,7 @@
     width: 100%;
 
     .portfolio-anchor {
+        align-items: center;
         width: 20%;
         background-color: rgba(0, 0, 0);
         display: flex;
@@ -39,6 +40,11 @@
         .ant-anchor-link-title-active {
             color: yellow !important;
         }
+    }
+
+    .darkMode {
+        background-color: black;
+        color: white;
     }
 
     .portfolio-body {
