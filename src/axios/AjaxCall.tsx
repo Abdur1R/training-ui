@@ -22,8 +22,8 @@ export const ajaxCall = async (options: OptionType) => {
         options.contentType || "application/x-www-form-urlencoded; charset=UTF-8";
     const processData = !!options.processData;
     const responseType = options.responseType || "json";
-    // const url = `https://samplespringboot-production.up.railway.app/${options.url}`;
-    const url = `http://localhost:8000/${options.url}`
+    const url = `https://samplespringboot-production.up.railway.app/${options.url}`;
+    // const url = `http://localhost:8000/${options.url}`
 
     const config = {
         type: method,
