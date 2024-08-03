@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/training-ui/static/css/main.3fb6d0d8.css",
-    "main.js": "/training-ui/static/js/main.63452645.js",
-    "static/js/787.05bc4f41.chunk.js": "/training-ui/static/js/787.05bc4f41.chunk.js",
+    "main.css": "/training-ui/static/css/main.fbd74f4b.css",
+    "main.js": "/training-ui/static/js/main.913b0777.js",
+    "static/js/787.a35bd745.chunk.js": "/training-ui/static/js/787.a35bd745.chunk.js",
     "static/media/pic.png": "/training-ui/static/media/pic.7dfa1cc974d7c3b0d784.png",
     "static/media/background-img.gif": "/training-ui/static/media/background-img.0315d737e1cb4a720c7b.gif",
-    "static/media/to-do-list.svg": "/training-ui/static/media/to-do-list.762df6b53260f3f8b5067b359af23de3.svg",
+    "static/media/to-do-list.svg": "/training-ui/static/media/to-do-list.55f2c6bb73174ad64377222d2eb92f75.svg",
     "index.html": "/training-ui/index.html",
-    "main.3fb6d0d8.css.map": "/training-ui/static/css/main.3fb6d0d8.css.map",
-    "main.63452645.js.map": "/training-ui/static/js/main.63452645.js.map",
-    "787.05bc4f41.chunk.js.map": "/training-ui/static/js/787.05bc4f41.chunk.js.map"
+    "main.fbd74f4b.css.map": "/training-ui/static/css/main.fbd74f4b.css.map",
+    "main.913b0777.js.map": "/training-ui/static/js/main.913b0777.js.map",
+    "787.a35bd745.chunk.js.map": "/training-ui/static/js/787.a35bd745.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fb6d0d8.css",
-    "static/js/main.63452645.js"
+    "static/css/main.fbd74f4b.css",
+    "static/js/main.913b0777.js"
   ]
 }
