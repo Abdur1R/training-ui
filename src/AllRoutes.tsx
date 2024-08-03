@@ -1,5 +1,6 @@
 import Calci from "./Calculator/Calci.tsx";
 import ChatAPI from "./ChatAPI/ChatAPI.tsx";
+import CricketGame from "./CricketGame/CricketGame.tsx";
 import Heart from "./Heart/Heart.tsx";
 import LandingPage from "./LandingPage/LandingPage.tsx";
 import PortFolio from "./Portfolio/Portfolio.tsx";
@@ -39,6 +40,10 @@ const AllRoutes = [
     {
         path: "/portfolio/:section",
         component: PortFolio,
+    },
+    {
+        path:"/cricketgame",
+        component: CricketGame,
     }
 ];
 
