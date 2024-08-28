@@ -1,3 +1,15 @@
+# Install node
+
+Install node.js from the official website and then run this command in command prompt: "SET PATH=C:\ProgramFiles\Nodejs;%PATH%". Give the your local path, where the node.js is installed, instead of "C:\...".
+
+# Install npm
+
+Run this command in the terminal: "npm install -g npm".
+
+# Install nvm
+
+Read this page to install nvm: "https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/".
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
