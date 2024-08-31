@@ -1,88 +1,147 @@
 .portFolio {
-    display: flex;
+  display: flex;
+  width: 100%;
+
+  .openCloseDiv {
+    background-color: rgba(0, 0, 255, 0.5);
     width: 100%;
+    border-radius: 0px;
 
-    .portfolio-anchor {
-        align-items: center;
-        width: 20%;
-        background-color: rgba(0, 0, 0);
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding: 50px 0;
-        position: fixed;
-        height: 100%;
-
-        .profilePic {
-            width: 120px;
-            height: 130px;
-            border-radius: 70px;
-        }
-
-        .ant-anchor-link {
-            // color: white;
-            font-size: 18px;
-        }
-
-        .ant-anchor-link-title {
-            color: rgba(255, 255, 255);
-        }
-
-        .ant-anchor-link-active {
-            // color: whites;
-            font-size: 24px;
-        }
-
-        :where(.css-dev-only-do-not-override-j9bb5n).ant-anchor-wrapper .ant-anchor .ant-anchor-link-active>.ant-anchor-link-title {
-            color: yellow !important;
-        }
-
-        .ant-anchor-link-title-active {
-            color: yellow !important;
-        }
+    &:hover {
+      background-color: rgba(0, 0, 255, 0.7) !important;
     }
 
-    .darkMode {
-        background-color: black;
-        color: white;
+    .openCloseIcon {
+      // margin-left: `${state.sideBar ? "19%" : "4.2%"}`,
+      margin-left: 19%;
+      // position: fixed;
+      //   margin-top: 20px;
+      transition: margin-left 1s;
+      color: white;
+    }
+  }
+
+  .width20 {
+    transition: width 1s;
+    width: 12%;
+  }
+
+  .width0 {
+    transition: width 1s;
+    width: 5%;
+  }
+
+  .width80 {
+    transition: width 1s;
+    width: 80%;
+  }
+
+  .width90 {
+    transition: width 1s;
+    width: 90%;
+  }
+
+  .portfolio-anchor {
+    align-items: center;
+    background-color: white;
+    box-shadow: 0.5px 0.5px black;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: fixed;
+    height: 100%;
+    // border:1px solid black;
+
+    .profilePic {
+      width: 100px;
+      height: 110px;
+      border-radius: 70px;
     }
 
-    .portfolio-body {
-        padding-left: 25%;
-
-        .section {
-            // height: 500px;
-            width: 80%;
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            margin: 50px;
-
-            .head {
-                font-size: 26px;
-                font-weight: 500;
-                margin-bottom: 30px;
-            }
-
-            .subHead {
-                font-size: 20px;
-                font-weight: 450;
-                margin-bottom: 30px;
-            }
-
-            .body {
-                font-size: 18px;
-                font-weight: 400;
-                margin-bottom: 30px;
-            }
-
-            .note {
-                margin: 10px;
-            }
-
-            .subBody {
-                margin: 10px;
-            }
-        }
+    .ant-anchor-link {
+      // color: white;
+      font-size: 18px;
     }
+
+    .ant-anchor::before {
+      visibility: hidden;
+    }
+
+    .ant-anchor-link-title {
+      color: rgba(0, 0, 0);
+    }
+
+    .ant-anchor-link-active {
+      // color: whites;
+      font-size: 24px;
+    }
+
+    :where(.css-dev-only-do-not-override-j9bb5n).ant-anchor-wrapper
+      .ant-anchor
+      .ant-anchor-link-active
+      > .ant-anchor-link-title {
+      color: rgba(0, 0, 255, 0.7) !important;
+    }
+
+    .ant-anchor-link-title-active {
+      color: rgba(0, 0, 255, 0.7) !important;
+    }
+  }
+
+  .darkMode {
+    background-color: black;
+    color: white;
+  }
+
+  .sideOpen {
+    padding-left: 12%;
+    transition: padding-left 1s;
+  }
+
+  .sideClose {
+    padding-left: 5%;
+    transition: padding-left 1s;
+  }
+
+  .portfolio-body {
+    .contactSection {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .section {
+      // height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      margin: 50px;
+
+      .head {
+        font-size: 26px;
+        font-weight: 500;
+        margin-bottom: 30px;
+      }
+
+      .subHead {
+        font-size: 20px;
+        font-weight: 450;
+        margin-bottom: 30px;
+      }
+
+      .body {
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 30px;
+      }
+
+      .note {
+        margin-right: 100px !important;
+      }
+
+      .subBody {
+        margin: 10px;
+      }
+    }
+  }
 }
