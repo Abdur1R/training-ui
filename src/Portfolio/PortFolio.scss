@@ -26,9 +26,21 @@
     width: 12%;
   }
 
+  @media (max-width: 1000px) {
+    .width20 {
+      width: 30%;
+    }
+  }
+
   .width0 {
     transition: width 1s;
     width: 5%;
+  }
+
+  @media (max-width: 1000px) {
+    .width0 {
+      width: 8%;
+    }
   }
 
   .width80 {
@@ -61,6 +73,7 @@
     .ant-anchor-link {
       // color: white;
       font-size: 18px;
+      padding-inline: 0px !important;
     }
 
     .ant-anchor::before {
@@ -96,6 +109,12 @@
   .sideOpen {
     padding-left: 12%;
     transition: padding-left 1s;
+  }
+
+  @media (max-width: 1000px) {
+    .sideOpen {
+      padding-left: 30%;
+    }
   }
 
   .sideClose {
