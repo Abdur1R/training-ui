@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from "react";
 import SideBar from "./SideBar";
 import "./PortFolio.scss";
-import ProfilePic from "../Pictures/pic.png";
+import ProfilePic from "../Pictures/ProfilrPic.png";
 import SectionBody from "./SectionBody";
 import ExperienceSection from "./ExperienceSection";
 import EducationSection from "./EducationSection";
@@ -18,11 +18,17 @@ import {
   RightOutlined,
 } from "@ant-design/icons";
 import Skills from "../Pictures/Skills.svg";
+import { LinkedinFilled } from "@ant-design/icons";
+import LinkedIn from "../Pictures/LinkedIn.svg";
+import GitHub from "../Pictures/github-mark.svg";
+import LeetCode from "../Pictures/LeetCode.svg";
+import Instagram from "../Pictures/Instagram.svg";
+import Twitter from "../Pictures/Twitter.svg";
 
 const PortFolio: React.FC = (): ReactElement => {
   const [state, updateState] = useState<any>({
     modeSwitch: false,
-    sideBar: false,
+    sideBar: true,
   });
 
   const ModeSwitchChange = (enabled: boolean) => {
@@ -47,102 +53,129 @@ const PortFolio: React.FC = (): ReactElement => {
 
   return (
     <div className="portFolio">
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        <div
-          //   onMouseEnter={onMouseEnter}
-          //   onMouseLeave={onMouseLeave}
-          className={`portfolio-anchor ${state.sideBar ? "width20" : "width0"}`}
-        >
-          {/* <div className="openCloseDiv"> */}
-          <Button className="openCloseDiv" onClick={onOpenClose}>
-            <OpenorClose className="openCloseIcon" />
-          </Button>
-          {/* </div> */}
-          {state.sideBar && (
-            <>
-              <div>
-                <img
-                  src={ProfilePic}
-                  alt="Profile Pic"
-                  className="profilePic"
-                />
+      <div
+        //   onMouseEnter={onMouseEnter}
+        //   onMouseLeave={onMouseLeave}
+        className={`portfolio-anchor ${state.sideBar ? "width20" : "width0"}`}
+      >
+        {/* <div className="openCloseDiv"> */}
+        <Button className="openCloseDiv" onClick={onOpenClose}>
+          <OpenorClose className="openCloseIcon" />
+        </Button>
+        {/* </div> */}
+        {state.sideBar && (
+          <>
+            <div>
+              <img src={ProfilePic} alt="Profile Pic" className="profilePic" />
+            </div>
+            <div className="iconLinks">
+              <div className="codeIcons">
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/abdur-rahman-shaik-55b88a202/"
+                >
+                  <img src={LinkedIn} alt="LinkedIn" className="width16" />
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://leetcode.com/Abdur1/"
+                >
+                  <img src={LeetCode} alt="LeetCode" className="width14" />
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://github.com/Abdur1R"
+                >
+                  <img src={GitHub} alt="GitHub" className="width16" />
+                </a>
               </div>
-              <Switch
-                style={{ backgroundColor: state.modeSwitch ? "green" : "grey" }}
-                size="default"
-                onChange={ModeSwitchChange}
-                checked={state.modeSwitch}
-              />
-            </>
-          )}
-          {/* <ProfileOutlined alt="About" />
+              <div className="mediaIcons">
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://www.instagram.com/a.b.d.u.r.1/"
+                >
+                  <img src={Instagram} alt="Instagram" className="width20P5" />
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://x.com/AbdurRahmanSk11"
+                >
+                  <img src={Twitter} alt="Twitter" className="width20P5" />
+                </a>
+              </div>
+            </div>
+            <Switch
+              style={{ backgroundColor: state.modeSwitch ? "green" : "grey" }}
+              size="default"
+              onChange={ModeSwitchChange}
+              checked={state.modeSwitch}
+            />
+          </>
+        )}
+        {/* <ProfileOutlined alt="About" />
           <BookOutlined alt="Education" /> */}
-          <SideBar
-            menuList={[
-              {
-                key: "about",
-                href: "#/portfolio/about",
-                title: state.sideBar ? (
-                  "About"
-                ) : (
-                  <ProfileOutlined alt="About" />
-                ),
-              },
-              {
-                key: "experience",
-                href: "#/portfolio/experience",
-                title: state.sideBar ? (
-                  "Experience"
-                ) : (
-                  <ProfileOutlined alt="About" />
-                ),
-                //   title: "Experience",
-              },
-              {
-                key: "education",
-                href: "#/portfolio/education",
-                title: state.sideBar ? (
-                  "Education"
-                ) : (
-                  <BookOutlined alt="Education" />
-                ),
-              },
-              {
-                key: "skills",
-                href: "#/portfolio/skills",
-                title: state.sideBar ? (
-                  "Skills"
-                ) : (
-                  <img
-                    src={Skills}
-                    alt="About"
-                    style={{ width: "26px", height: "26px", fontWeight: "600" }}
-                  />
-                ),
-              },
-              {
-                key: "links",
-                href: "#/portfolio/links",
-                title: state.sideBar ? (
-                  "Links"
-                ) : (
-                  <ProfileOutlined alt="About" />
-                ),
-              },
-              {
-                key: "contact",
-                href: "#/portfolio/contact",
-                title: state.sideBar ? (
-                  "Contact"
-                ) : (
-                  <ProfileOutlined alt="About" />
-                ),
-              },
-            ]}
-          />
-          {/* </> */}
-          {/* )} */}
-        </div>
+        <SideBar
+          menuList={[
+            {
+              key: "about",
+              href: "#/portfolio/about",
+              title: state.sideBar ? "About" : <ProfileOutlined alt="About" />,
+            },
+            {
+              key: "experience",
+              href: "#/portfolio/experience",
+              title: state.sideBar ? (
+                "Experience"
+              ) : (
+                <ProfileOutlined alt="About" />
+              ),
+              //   title: "Experience",
+            },
+            {
+              key: "education",
+              href: "#/portfolio/education",
+              title: state.sideBar ? (
+                "Education"
+              ) : (
+                <BookOutlined alt="Education" />
+              ),
+            },
+            {
+              key: "skills",
+              href: "#/portfolio/skills",
+              title: state.sideBar ? (
+                "Skills"
+              ) : (
+                <img
+                  src={Skills}
+                  alt="About"
+                  style={{ width: "26px", height: "26px", fontWeight: "600" }}
+                />
+              ),
+            },
+            {
+              key: "links",
+              href: "#/portfolio/links",
+              title: state.sideBar ? "Links" : <ProfileOutlined alt="About" />,
+            },
+            {
+              key: "contact",
+              href: "#/portfolio/contact",
+              title: state.sideBar ? (
+                "Contact"
+              ) : (
+                <ProfileOutlined alt="About" />
+              ),
+            },
+          ]}
+        />
+        {/* </> */}
+        {/* )} */}
       </div>
       <div
         className={`${

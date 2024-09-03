@@ -13,7 +13,7 @@
 
     .openCloseIcon {
       // margin-left: `${state.sideBar ? "19%" : "4.2%"}`,
-      margin-left: 19%;
+      margin-left: 18%;
       // position: fixed;
       //   margin-top: 20px;
       transition: margin-left 1s;
@@ -59,15 +59,53 @@
     box-shadow: 0.5px 0.5px black;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     position: fixed;
     height: 100%;
     // border:1px solid black;
 
     .profilePic {
+      margin-top: 10px;
       width: 100px;
       height: 110px;
       border-radius: 70px;
+    }
+
+    .iconLinks {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .codeIcons {
+        display: flex;
+        gap: 4px;
+
+        .width16 {
+          width: 16px;
+
+          &:hover {
+            width: 18px;
+          }
+        }
+
+        .width14 {
+          width: 14px;
+
+          &:hover {
+            width: 16px;
+          }
+        }
+      }
+
+      .mediaIcons {
+        .width20P5 {
+          width: 20.5px;
+
+          &:hover {
+            width: 22px;
+          }
+        }
+      }
     }
 
     .ant-anchor-link {
