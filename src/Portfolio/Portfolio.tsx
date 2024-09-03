@@ -158,11 +158,11 @@ const PortFolio: React.FC = (): ReactElement => {
                 />
               ),
             },
-            {
-              key: "links",
-              href: "#/portfolio/links",
-              title: state.sideBar ? "Links" : <ProfileOutlined alt="About" />,
-            },
+            // {
+            //   key: "links",
+            //   href: "#/portfolio/links",
+            //   title: state.sideBar ? "Links" : <ProfileOutlined alt="About" />,
+            // },
             {
               key: "contact",
               href: "#/portfolio/contact",
@@ -184,7 +184,11 @@ const PortFolio: React.FC = (): ReactElement => {
       >
         <SectionBody
           darkMode={state.modeSwitch}
-          head={"About"}
+          head={
+            <h2 style={{ marginBottom: "-12px" }}>
+              Abdur Rahman Shaik
+            </h2>
+          }
           body={<AboutSection />}
           subHead={""}
           id={"/portfolio/about"}
@@ -210,21 +214,30 @@ const PortFolio: React.FC = (): ReactElement => {
           subHead={""}
           id={"/portfolio/skills"}
         />
-        <SectionBody
+        {/* <SectionBody
           darkMode={state.modeSwitch}
           head={"Links"}
           body={<LinkSection />}
           subHead={""}
           id={"/portfolio/links"}
-        />
+        /> */}
         <SectionBody
           darkMode={state.modeSwitch}
           head={"Contact"}
           body={
             <div className="contactSection">
-              <div>+919866868600</div>
+              <h5>Phone:</h5>
+              <div>+1 646 789 8871 - US</div>
+              <h5>Whatsapp:</h5>
+              <div>+91 9866868600 - IN</div>
+              <h5>Personal Email ID:</h5>
               <div>abdurrahmanshaik111@gmail.com</div>
-              <div>Hyderabad India</div>{" "}
+              <h5>University Email ID:</h5>
+              <div>shaika4@mail.uc.edu</div>
+              <h5>Study/University Address:</h5>
+              <div>Cincinnati, Ohio, United States of America</div>
+              <h5>Home Address:</h5>
+              <div>Mahabubabad, Telangana, India</div>
             </div>
           }
           subHead={""}
