@@ -8,7 +8,7 @@ import EducationSection from "./EducationSection";
 import AboutSection from "./AboutSection";
 import SkillSection from "./SkillSection";
 import LinkSection from "./LinkSection";
-import { Button, Switch } from "antd";
+import { Button, Modal, Switch } from "antd";
 import {
   ProfileOutlined,
   BookOutlined,
@@ -71,6 +71,7 @@ const PortFolio: React.FC = (): ReactElement => {
             <div className="iconLinks">
               <div className="codeIcons">
                 <a
+                  title="LinkedIn"
                   rel="noreferrer"
                   target="_blank"
                   href="https://www.linkedin.com/in/abdur-rahman-shaik-55b88a202/"
@@ -78,6 +79,7 @@ const PortFolio: React.FC = (): ReactElement => {
                   <img src={LinkedIn} alt="LinkedIn" className="width16" />
                 </a>
                 <a
+                  title="LeetCode"
                   rel="noreferrer"
                   target="_blank"
                   href="https://leetcode.com/Abdur1/"
@@ -85,6 +87,7 @@ const PortFolio: React.FC = (): ReactElement => {
                   <img src={LeetCode} alt="LeetCode" className="width14" />
                 </a>
                 <a
+                  title="GitHub"
                   rel="noreferrer"
                   target="_blank"
                   href="https://github.com/Abdur1R"
@@ -94,6 +97,7 @@ const PortFolio: React.FC = (): ReactElement => {
               </div>
               <div className="mediaIcons">
                 <a
+                  title="Instagram"
                   rel="noreferrer"
                   target="_blank"
                   href="https://www.instagram.com/a.b.d.u.r.1/"
@@ -101,6 +105,7 @@ const PortFolio: React.FC = (): ReactElement => {
                   <img src={Instagram} alt="Instagram" className="width20P5" />
                 </a>
                 <a
+                  title="Twitter"
                   rel="noreferrer"
                   target="_blank"
                   href="https://x.com/AbdurRahmanSk11"
@@ -185,9 +190,11 @@ const PortFolio: React.FC = (): ReactElement => {
         <SectionBody
           darkMode={state.modeSwitch}
           head={
-            <h2 style={{ marginBottom: "-12px" }}>
-              Abdur Rahman Shaik
-            </h2>
+            <div>
+              <h2 style={{ marginBottom: "-12px" }}>Abdur Rahman Shaik</h2>
+              {/* <Button>Resume</Button>
+              <Modal open={false}></Modal> */}
+            </div>
           }
           body={<AboutSection />}
           subHead={""}

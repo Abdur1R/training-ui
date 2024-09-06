@@ -1,5 +1,5 @@
 export interface OptionType {
-    url: string;
+    url?: string;
     endpointKey?: string;
     method?: string;
     contentType?: string;
@@ -7,4 +7,5 @@ export interface OptionType {
     processData?: string;
     responseType?: any;
     headers?: any;
+    wholeUrl?:string;
 }

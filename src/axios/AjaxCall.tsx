@@ -22,7 +22,7 @@ export const ajaxCall = async (options: OptionType) => {
         options.contentType || "application/x-www-form-urlencoded; charset=UTF-8";
     const processData = !!options.processData;
     const responseType = options.responseType || "json";
-    const url = `https://samplespringboot-production.up.railway.app/${options.url}`;
+    const url = options.wholeUrl ?? `https://light-astrid-abdur1-20b132f1.koyeb.app/backendservice/${options.url}`;
     // const url = `http://localhost:8000/${options.url}`
 
     const config = {
