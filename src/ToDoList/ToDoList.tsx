@@ -89,7 +89,7 @@ const TodoList = () => {
       }
       return task;
     });
-    ajaxCall({ url: "/toDoList/update", method: "PUT", data: updatedObj }).then(
+    ajaxCall({ url: "toDoList/update", method: "PUT", data: updatedObj }).then(
       (response) => {
         setState({ ...state, tasks: updatedTasks });
       }
