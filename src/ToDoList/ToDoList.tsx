@@ -45,17 +45,19 @@ const TodoList = () => {
     // const index = tasks.findIndex((task) => task.taskTitle === taskName);
     // tasks.splice(index, 1);
     // setState((prev)=>({ ...prev, tasks:prev.tasks.filter((item)) }));
-    ajaxCall({ url: `toDoList/delete/${date}` }).then((response) => {
-      if (response.status === 200) {
-        let newData: any = [];
-        response.data.forEach((item: any, index: number) => {
-          newData.push({ ...item, id: index + 1 });
-        });
-        setState((prev) => ({ ...prev, tasks: newData }));
-      } else {
-        console.log("toDoList/delete API Failed!");
+    ajaxCall({ url: `toDoList/delete/${date}`, method: "DELETE" }).then(
+      (response) => {
+        if (response.status === 200) {
+          let newData: any = [];
+          response.data.forEach((item: any, index: number) => {
+            newData.push({ ...item, id: index + 1 });
+          });
+          setState((prev) => ({ ...prev, tasks: newData }));
+        } else {
+          console.log("toDoList/delete API Failed!");
+        }
       }
-    });
+    );
   };
 
   const handleFilterChange = (filter: any) => {
@@ -76,16 +78,22 @@ const TodoList = () => {
     }
   };
 
-  const handleToggleCompleted = (taskName: any) => {
+  const handleToggleCompleted = (date: any) => {
     const { tasks }: any = state;
+    let updatedObj = {};
     // const index = tasks.findIndex((task: any) => task.task === taskName);
     const updatedTasks = tasks.map((task: any) => {
-      if (task.taskTitle === taskName) {
-        return { ...task, completed: true };
+      if (task.date === date) {
+        updatedObj = { ...task, completed: true };
+        return updatedObj;
       }
       return task;
     });
-    setState({ ...state, tasks: updatedTasks });
+    ajaxCall({ url: "/toDoList/update", method: "PUT", data: updatedObj }).then(
+      (response) => {
+        setState({ ...state, tasks: updatedTasks });
+      }
+    );
   };
 
   const GetList = () => {
