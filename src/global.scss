@@ -1,16 +1,29 @@
 .d-flex-row {
-    display: flex;
+  display: flex !important;
 }
 
 .d-flex-col {
-    display: flex;
-    flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.d-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .justify-content-between {
-    justify-content: space-between;
+  justify-content: space-between !important;
 }
 
 .gap-10 {
-    gap: 10%;
+  gap: 10% !important;
+}
+
+.gap-25 {
+  gap: 25px !important;
+}
+
+.gap-50 {
+  gap: 50px !important;
 }

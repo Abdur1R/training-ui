@@ -1,0 +1,35 @@
+.jobs {
+  margin: 3% 6% 3% 6%;
+
+  .mainTitle {
+    display: flex;
+    align-items: start;
+    font-size: 24px;
+  }
+
+  .gap10 {
+    gap: 10px;
+  }
+
+  .eachJobBody {
+    padding: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    max-width: 40%;
+    display: flex;
+    justify-content: space-between;
+
+    .jobTitle {
+      font-weight: 500;
+      max-width: 80%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
