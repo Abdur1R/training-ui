@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ajaxCall } from "../axios/AjaxCall";
 import Search from "antd/es/input/Search";
-import { DatePicker, Select } from "antd";
+import { DatePicker, Select, Skeleton } from "antd";
 import { dummyData } from "./DummyData";
 import "./JobPortal.scss";
 import OpenLink from "../Pictures/OpenLink.svg";
@@ -16,6 +16,7 @@ const JobPortal = () => {
     searchLocation: "",
     startDate: "",
     endDate: "",
+    loader: true,
   });
   const AmazonAPI = () => {
     // fetch("https://www.amazon.jobs/en/search.json?offset=0&result_limit=100&sort=relevant&latitude=38.89037&longitude=-77.03196&loc_group_id=&loc_query=United%20States&base_query=&city=&country=USA&region=&county=&query_options=&")
@@ -32,6 +33,7 @@ const JobPortal = () => {
     startDate?: string,
     endDate?: string
   ) => {
+    updateState((prev: any) => ({ ...prev, loader: true }));
     // let url=new URLSearchParams("");
     // let urlStr: string = `jobs/alljobs?title=${title}&location=${location}&startDate=${startDate}&endDate=${endDate}`;
     // if (title && title.length > 0) {
@@ -47,6 +49,7 @@ const JobPortal = () => {
       updateState((prev: any) => ({
         ...prev,
         allJobs: JSON.parse(sessionData),
+        loader: false,
       }));
     } else {
       ajaxCall({
@@ -55,7 +58,11 @@ const JobPortal = () => {
         .then((response: any) => {
           console.log("all response", response);
           if (response.status === 200) {
-            updateState((prev: any) => ({ ...prev, allJobs: response.data }));
+            updateState((prev: any) => ({
+              ...prev,
+              allJobs: response.data,
+              loader: false,
+            }));
             sessionStorage.setItem(
               `${title}-${location}-${startDate}-${endDate}-JobsData`,
               JSON.stringify(response.data)
@@ -65,10 +72,18 @@ const JobPortal = () => {
           }
         })
         .catch((e) => {
-          updateState((prev: any) => ({ ...prev, allJobs: dummyData }));
+          updateState((prev: any) => ({
+            ...prev,
+            allJobs: dummyData,
+            loader: false,
+          }));
         });
       if (Object.keys(state.allJobs).length === 0) {
-        updateState((prev: any) => ({ ...prev, allJobs: dummyData }));
+        updateState((prev: any) => ({
+          ...prev,
+          allJobs: dummyData,
+          loader: false,
+        }));
       }
     }
   };
@@ -121,17 +136,28 @@ const JobPortal = () => {
           style={{ width: "20%" }}
         />
         <DatePicker.RangePicker onChange={onDateChange} />
+        <DatePicker
+          onBlur={(e) => {
+            console.log(`[LOG] 🚀 ~~ onBlur e:`, e);
+          }}
+          onChange={(e) => {
+            console.log(`[LOG] 🚀 ~~ onChange e:`, e);
+          }}
+        />
         {/* <Select
         options={[{label:"Search by Title"}]}
         /> */}
       </div>
       <div className="d-flex-wrap gap-25">
-        {state.allJobs &&
+        {state.loader ? (
+          <Skeleton active />
+        ) : (
+          state.allJobs &&
           Object.keys(state.allJobs).length > 0 &&
           state.allJobs.results.map((item: any) => (
             <div className="eachJobBody">
               <a
-                title="LinkedIn"
+                title={item.title}
                 rel="noreferrer"
                 target="_blank"
                 href={item.application_url}
@@ -148,7 +174,8 @@ const JobPortal = () => {
                 <img src={OpenLink} alt="Open Link" style={{ width: "14px" }} />
               </a>
             </div>
-          ))}
+          ))
+        )}
       </div>
     </div>
   );

@@ -190,10 +190,20 @@ const PortFolio: React.FC = (): ReactElement => {
         <SectionBody
           darkMode={state.modeSwitch}
           head={
-            <div>
+            <div className="d-flex-row">
               <h2 style={{ marginBottom: "-12px" }}>Abdur Rahman Shaik</h2>
-              {/* <Button>Resume</Button>
-              <Modal open={false}></Modal> */}
+              <Button className="resumeBtn">
+                <a
+                  href="/Resume1909.pdf"
+                  download="ABDUR RAHMAN RESUME.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Download Resume
+                </a>
+              </Button>
+              {/*<Modal open={false}></Modal> */}
             </div>
           }
           body={<AboutSection />}
