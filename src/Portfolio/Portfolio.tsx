@@ -194,7 +194,7 @@ const PortFolio: React.FC = (): ReactElement => {
               <h2 style={{ marginBottom: "-12px" }}>Abdur Rahman Shaik</h2>
               <Button className="resumeBtn">
                 <a
-                  href="/Resume1909.pdf"
+                  href="/training-ui/Resume1909.pdf"
                   download="ABDUR RAHMAN RESUME.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
