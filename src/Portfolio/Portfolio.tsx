@@ -8,7 +8,7 @@ import EducationSection from "./EducationSection";
 import AboutSection from "./AboutSection";
 import SkillSection from "./SkillSection";
 import LinkSection from "./LinkSection";
-import { Button, Modal, Switch } from "antd";
+import { Button, Image, Modal, Switch } from "antd";
 import {
   ProfileOutlined,
   BookOutlined,
@@ -25,14 +25,25 @@ import LeetCode from "../Pictures/LeetCode.svg";
 import Instagram from "../Pictures/Instagram.svg";
 import Twitter from "../Pictures/Twitter.svg";
 
+type stateType = {
+  modeSwitch: boolean;
+  sideBar: boolean;
+  modalOpen: boolean;
+};
+
 const PortFolio: React.FC = (): ReactElement => {
-  const [state, updateState] = useState<any>({
+  const [state, updateState] = useState<stateType>({
     modeSwitch: false,
     sideBar: true,
+    modalOpen: false,
   });
 
   const ModeSwitchChange = (enabled: boolean) => {
     updateState((prev: any) => ({ ...prev, modeSwitch: enabled }));
+  };
+
+  const onModalChange = () => {
+    updateState((prev: any) => ({ ...prev, modalOpen: !state.modalOpen }));
   };
 
   //   const onMouseEnter = () => {
@@ -66,7 +77,12 @@ const PortFolio: React.FC = (): ReactElement => {
         {state.sideBar && (
           <>
             <div>
-              <img src={ProfilePic} alt="Profile Pic" className="profilePic" />
+              <Image
+                className="profilePic"
+                src={ProfilePic}
+                preview={{ src: ProfilePic }}
+              />
+              {/* <img src={ProfilePic} alt="Profile Pic" className="profilePic" /> */}
             </div>
             <div className="iconLinks">
               <div className="codeIcons">
@@ -192,7 +208,7 @@ const PortFolio: React.FC = (): ReactElement => {
           head={
             <div className="d-flex-row">
               <h2 style={{ marginBottom: "-12px" }}>Abdur Rahman Shaik</h2>
-              <Button className="resumeBtn">
+              {/* <Button className="resumeBtn">
                 <a
                   href="/training-ui/Resume1909.pdf"
                   download="ABDUR RAHMAN RESUME.pdf"
@@ -202,8 +218,50 @@ const PortFolio: React.FC = (): ReactElement => {
                 >
                   Download Resume
                 </a>
+              </Button> */}
+              <Button className="resumeBtn" onClick={onModalChange}>
+                Resume
               </Button>
-              {/*<Modal open={false}></Modal> */}
+              <Modal
+                width="50%"
+                open={state.modalOpen}
+                onClose={onModalChange}
+                onCancel={onModalChange}
+                footer={
+                  <>
+                    <Button className="resumeBtn" onClick={onModalChange}>
+                      Close
+                    </Button>
+                    <Button className="downloadBtn">
+                      <a
+                        href="/training-ui/Resume1909.pdf"
+                        download="ABDUR RAHMAN RESUME.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: "none", color: "inherit" }}
+                      >
+                        Download
+                      </a>
+                    </Button>
+                  </>
+                }
+                className="resumeModal"
+                centered
+              >
+                <iframe
+                  src="https://drive.google.com/file/d/1BbsITiaGD-1WGGONxnpkL-a6KMZxMuGo/preview"
+                  width="100%"
+                  height="400"
+                  allow="autoplay"
+                />
+                {/* </iframe> */}
+                {/* <Image
+                  className="profilePic"
+                  src="/training-ui/Resume1909.pdf"
+                  preview={false}
+                  // preview={{ src: "/training-ui/Resume1909.pdf" }}
+                /> */}
+              </Modal>
             </div>
           }
           body={<AboutSection />}

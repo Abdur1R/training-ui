@@ -71,6 +71,11 @@
       border-radius: 70px;
     }
 
+    // :where(.css-dev-only-do-not-override-14i19y2).ant-image
+    .ant-image-mask:hover {
+      border-radius: 70px;
+    }
+
     .iconLinks {
       display: flex;
       flex-direction: column;
@@ -200,15 +205,37 @@
       .subBody {
         margin: 10px;
       }
-    }
 
-    .resumeBtn {
-      margin-top: 45px !important;
-      border-radius: 30px !important;
-      padding: 12px 8px !important;
-      margin: 10px;
-      border: 1px solid rgba(0, 0, 255, 0.5);
-      font-size: 12px;
+      .resumeBtn {
+        margin-top: 45px !important;
+        border-radius: 30px !important;
+        padding: 12px 8px !important;
+        margin: 10px;
+        border: 1px solid rgba(0, 0, 255, 0.5);
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.resumeModal {
+  .resumeBtn {
+    margin-top: 10px !important;
+    border-radius: 30px !important;
+    border: 1px solid rgba(0, 0, 255, 0.5);
+    font-size: 12px;
+  }
+
+  .downloadBtn {
+    margin-top: 10px !important;
+    border-radius: 30px !important;
+    background-color: rgba(0, 0, 255, 0.5);
+    color: white;
+    font-size: 12px;
+
+    &:hover {
+      background-color: rgba(0, 0, 255) !important;
+      color: white !important;
     }
   }
 }
