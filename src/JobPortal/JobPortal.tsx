@@ -78,13 +78,13 @@ const JobPortal = () => {
             loader: false,
           }));
         });
-      if (Object.keys(state.allJobs).length === 0) {
-        updateState((prev: any) => ({
-          ...prev,
-          allJobs: dummyData,
-          loader: false,
-        }));
-      }
+      // if (Object.keys(state.allJobs).length === 0) {
+      //   updateState((prev: any) => ({
+      //     ...prev,
+      //     allJobs: dummyData,
+      //     loader: false,
+      //   }));
+      // }
     }
   };
 
@@ -136,14 +136,14 @@ const JobPortal = () => {
           style={{ width: "20%" }}
         />
         <DatePicker.RangePicker onChange={onDateChange} />
-        <DatePicker
+        {/* <DatePicker
           onBlur={(e) => {
             console.log(`[LOG] 🚀 ~~ onBlur e:`, e);
           }}
           onChange={(e) => {
             console.log(`[LOG] 🚀 ~~ onChange e:`, e);
           }}
-        />
+        /> */}
         {/* <Select
         options={[{label:"Search by Title"}]}
         /> */}
@@ -156,20 +156,41 @@ const JobPortal = () => {
           Object.keys(state.allJobs).length > 0 &&
           state.allJobs.results.map((item: any) => (
             <div className="eachJobBody">
-              <a
-                title={item.title}
-                rel="noreferrer"
-                target="_blank"
-                href={item.application_url}
-                className="jobTitle"
-              >
-                <div>{item.title}</div>
-              </a>
+              <div className="logoNtitle">
+                <div className="compLogo">
+                  <img src={item?.company?.logo} width={20} height={20} />
+                </div>
+                <div className="titleNcompany">
+                  <a
+                    title={item.title}
+                    rel="noreferrer"
+                    target="_blank"
+                    href={item.application_url}
+                    style={{
+                      textDecoration: "none",
+                      // display: "grid",
+                      // maxWidth: "fit-content",
+                    }}
+                  >
+                    <div className="jobTitle">{item.title}</div>
+                  </a>
+                  <a
+                    title={item.title}
+                    rel="noreferrer"
+                    target="_blank"
+                    href={item?.company?.website_url ?? "/"}
+                    className="compTitle"
+                  >
+                    {item?.company?.name ?? "Unrecognized Company"}
+                  </a>
+                </div>
+              </div>
               <a
                 title="LinkedIn"
                 rel="noreferrer"
                 target="_blank"
-                href={item.application_url}
+                href={item?.application_url}
+                style={{ marginLeft: "15px" }}
               >
                 <img src={OpenLink} alt="Open Link" style={{ width: "14px" }} />
               </a>
