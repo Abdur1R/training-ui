@@ -1,56 +1,68 @@
 .to-do-list {
-    margin: 5% 35%;
+  margin: 5% 35%;
 
-    .widthAddInput {
-        width: 200px !important;
+  .widthAddInput {
+    width: 200px !important;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 20px;
+  }
+
+  .ant-tabs-nav-wrap {
+    justify-content: center;
+  }
+
+  .ant-tabs-tab-active {
+    color: brown !important;
+  }
+
+  .ant-tabs-nav-list {
+    width: 100%;
+    display: contents;
+
+    .ant-tabs-tab-btn {
+      margin: 0% 10%;
+    }
+  }
+
+  .ant-tabs {
+    width: 100%;
+  }
+
+  .ant-tabs-tab {
+    width: 25%;
+  }
+
+  .list-item {
+    font-size: 14px;
+    padding: 3% 6% 3% 6%;
+    border-bottom: 1px solid rgba(240, 240, 240, 2);
+
+    .task-title {
+      width: 100%;
     }
 
-    .card {
-        display: flex;
-        justify-content: center;
-        background-color: #C0C0C0;
+    &:hover {
+      .task-title {
+        width: 60%;
+      }
+
+      .delete-done {
+        display: flex !important;
+        gap: 15px;
+        height: 20px;
+        top: 50% !important;
+      }
+      background-color: rgba(240, 240, 240);
+      cursor: pointer;
     }
+  }
 
-    .ant-tabs-nav-wrap {
-        justify-content: center;
-    }
-
-    .ant-tabs-tab-active {
-        color: brown !important;
-    }
-
-    .ant-tabs-nav-list {
-        width: 100%;
-        display: contents;
-
-        .ant-tabs-tab-btn {
-            margin: 0% 10%;
-        }
-    }
-
-    .ant-tabs {
-        width: 100%;
-    }
-
-    .ant-tabs-tab {
-        width: 25%;
-    }
-
-    .list-item {
-        font-size: 18px;
-        padding: 3% 10% 3% 6%;
-        border-bottom: 1px solid black;
-
-        &:hover {
-            .delete-done {
-                display: block !important;
-            }
-        }
-    }
-
-    .delete-done {
-        display: none;
-    }
-
-
+  .delete-done {
+    display: none;
+  }
 }

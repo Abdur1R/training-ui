@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Task from "./Task";
 import AddTask from "./AddTask";
+import { message } from "antd";
 import { Tabs } from "antd";
 import "./ToDoList.scss";
 import { ajaxCall } from "../axios/AjaxCall";
@@ -37,6 +38,8 @@ const TodoList = () => {
           }
         }
       );
+    } else {
+      message.error({ content: "Please enter the task name!", duration: 2 });
     }
   };
 
@@ -125,7 +128,9 @@ const TodoList = () => {
               <Task
                 id={index + 1}
                 task={task}
-                onToggleCompleted={handleToggleCompleted}
+                onToggleCompleted={
+                  task.completed ? null : handleToggleCompleted
+                }
                 onDeleteTask={handleDeleteTask}
               />
             ))}
@@ -135,7 +140,7 @@ const TodoList = () => {
               <Task
                 id={index + 1}
                 task={task}
-                onToggleCompleted={handleToggleCompleted}
+                // onToggleCompleted={handleToggleCompleted}
                 onDeleteTask={handleDeleteTask}
               />
             ))}
