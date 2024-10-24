@@ -18,7 +18,7 @@ const SectionBody = ({
     {subHead && (
       <div className={darkMode ? "subHead darkMode" : "subHead"}>{subHead}</div>
     )}
-    {body && <div className={darkMode ? "body darkMode" : "body"}>{body}</div>}
+    {body && <div className="body">{body}</div>}
   </div>
 );
 

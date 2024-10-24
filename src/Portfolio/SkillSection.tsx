@@ -1,33 +1,33 @@
 const SkillSection = () => (
   <>
-    <ul>
-      <li>
+    <div style={{ textAlign: "left" }}>
+      <div>
         <b>Web Dev: </b>
         React JS, Bootstrap, Micro-Front-Ends (MFE), Springboot, Spring MVC,
         HTML 5, CSS 3, Jest.
-      </li>
-      <li>
+      </div>
+      <div>
         <b>Programming Languages : </b>
         Javascript, JAVA, Typescript, Python, C, SQL
-      </li>
-      <li>
+      </div>
+      <div>
         <b>Database : </b>
         Mongodb, Postgres(RDBMS)
-      </li>
-      <li>
+      </div>
+      <div>
         <b>Deployment : </b>
         Jenkins CI/CD pipeline and Argocd
-      </li>
-      <li>
+      </div>
+      <div>
         <b>Dev Tools : </b>
         Git, GitHub, VSCode, Intelli), Agile Environment/methodologies, Postman.
-      </li>
-      <li>
+      </div>
+      <div>
         <b>Coding Concepts : </b>
         Data structure and Algorithms, Object-Oriented Programming (OOP),
         RESTful Web Services, Graph QL
-      </li>
-    </ul>
+      </div>
+    </div>
   </>
 );
 
