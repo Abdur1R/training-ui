@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Task from "./Task";
 import AddTask from "./AddTask";
 import { message } from "antd";
 import { Tabs } from "antd";
 import "./ToDoList.scss";
 import { ajaxCall } from "../axios/AjaxCall";
+import ProtectedRoute from "../CommonFiles/ProtectedRoute";
+import SessionActive from "../CommonAPIs/SessionApi";
+import { Navigate } from "react-router-dom";
+import { UserContext } from "../App";
 
 const { TabPane } = Tabs;
 
 const TodoList = () => {
-  console.log("In To Do LiST");
+  const [userDetails, updateUserDetails] = useContext<any>(UserContext);
+
   const [state, setState] = useState({
     tasks: [
       //   { id: 1, taskTitle: "Buy groceries", completed: false },
@@ -111,53 +116,58 @@ const TodoList = () => {
 
   const { tasks, filter } = state;
   // const filteredTasks = getFilteredTasks();
-  console.log("Tasks", tasks);
+  // console.log("Tasks", tasks);
 
   useEffect(() => {
-    GetList();
+    if (localStorage.getItem("active") === "true" && userDetails?.active) {
+      GetList();
+    }
   }, []);
 
   return (
-    <div className="to-do-list">
-      <h1>To-Do List</h1>
-      <AddTask onAddTask={handleAddTask} />
-      <div className="card">
-        <Tabs onChange={handleFilterChange}>
-          <TabPane tab="All" key="all">
-            {getFilteredTasks("all").map((task: any, index: number) => (
-              <Task
-                id={index + 1}
-                task={task}
-                onToggleCompleted={
-                  task.completed ? null : handleToggleCompleted
-                }
-                onDeleteTask={handleDeleteTask}
-              />
-            ))}
-          </TabPane>
-          <TabPane tab="Completed" key="completed">
-            {getFilteredTasks("completed").map((task: any, index: number) => (
-              <Task
-                id={index + 1}
-                task={task}
-                // onToggleCompleted={handleToggleCompleted}
-                onDeleteTask={handleDeleteTask}
-              />
-            ))}
-          </TabPane>
-          <TabPane tab="In-Complete" key="incomplete">
-            {getFilteredTasks("incomplete").map((task: any, index: number) => (
-              <Task
-                id={index + 1}
-                task={task}
-                onToggleCompleted={handleToggleCompleted}
-                onDeleteTask={handleDeleteTask}
-              />
-            ))}
-          </TabPane>
-        </Tabs>
-      </div>
-      {/* <div>
+    <ProtectedRoute>
+      <div className="to-do-list">
+        <h1>To-Do List</h1>
+        <AddTask onAddTask={handleAddTask} />
+        <div className="card">
+          <Tabs onChange={handleFilterChange}>
+            <TabPane tab="All" key="all">
+              {getFilteredTasks("all").map((task: any, index: number) => (
+                <Task
+                  id={index + 1}
+                  task={task}
+                  onToggleCompleted={
+                    task.completed ? null : handleToggleCompleted
+                  }
+                  onDeleteTask={handleDeleteTask}
+                />
+              ))}
+            </TabPane>
+            <TabPane tab="Completed" key="completed">
+              {getFilteredTasks("completed").map((task: any, index: number) => (
+                <Task
+                  id={index + 1}
+                  task={task}
+                  // onToggleCompleted={handleToggleCompleted}
+                  onDeleteTask={handleDeleteTask}
+                />
+              ))}
+            </TabPane>
+            <TabPane tab="In-Complete" key="incomplete">
+              {getFilteredTasks("incomplete").map(
+                (task: any, index: number) => (
+                  <Task
+                    id={index + 1}
+                    task={task}
+                    onToggleCompleted={handleToggleCompleted}
+                    onDeleteTask={handleDeleteTask}
+                  />
+                )
+              )}
+            </TabPane>
+          </Tabs>
+        </div>
+        {/* <div>
                 <button onClick={() => handleFilterChange('all')} disabled={filter === 'all'}>
                     All
                 </button>
@@ -168,7 +178,8 @@ const TodoList = () => {
                     Incomplete
                 </button>
             </div> */}
-    </div>
+      </div>
+    </ProtectedRoute>
   );
 };
 

@@ -1,5 +1,5 @@
 .to-do-list {
-  margin: 5% 35%;
+  margin: 5% 15%;
 
   .widthAddInput {
     width: 200px !important;
@@ -10,6 +10,13 @@
     justify-content: center;
     background-color: #fff;
     border-radius: 20px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+
+    .ant-tabs-nav-wrap {
+      overflow: visible !important;
+    }
   }
 
   .ant-tabs-nav-wrap {

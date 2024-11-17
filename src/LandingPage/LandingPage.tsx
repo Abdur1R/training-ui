@@ -1,38 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import ToDoListPic from "../Pictures/to-do-list.svg";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import TodoList from "../ToDoList/ToDoList";
 import Card from "../Card/Card";
+import { UserContext } from "../App";
+import ProtectedRoute from "../CommonFiles/ProtectedRoute";
 
 const ProjectsList = [
-    {
-        name: 'To Do List',
-        path: '/todolist',
-        component: <TodoList />,
-        image: ToDoListPic,
-    },
+  {
+    name: "To Do List",
+    path: "/todolist",
+    component: <TodoList />,
+    image: ToDoListPic,
+  },
 ];
 
 const LandingPage = () => {
-    const navigate = useNavigate();
-    const onCardClick = (url: string) => {
-        navigate(url);
-    };
+  console.log("In Landing Page");
+  const navigate = useNavigate();
+  const onCardClick = (url: string) => {
+    navigate(url);
+  };
 
-    return (
-        <>
-            {
-                ProjectsList.map((item: any) => (
-                    <div onClick={() => onCardClick(item.path)}>
-                        <Card
-                            image={item.image}
-                            alt={item.name}
-                        />
-                    </div>
-                ))
-            }
-        </>
-    );
+  return (
+    <ProtectedRoute>
+      {ProjectsList.map((item: any) => (
+        <div onClick={() => onCardClick(item.path)}>
+          <Card image={item.image} alt={item.name} />
+        </div>
+      ))}
+    </ProtectedRoute>
+  );
 };
 
 export default LandingPage;

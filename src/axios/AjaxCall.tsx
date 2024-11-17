@@ -39,22 +39,22 @@ export const ajaxCall = async (options: OptionType) => {
   };
 
   if (method === "POST") {
-    return axios.post(url, data, {
+    return await axios.post(url, data, {
       ...config,
       data,
     });
   }
   if (method === "PUT") {
-    return axios.put(url, data, {
+    return await axios.put(url, data, {
       ...config,
       data,
     });
   }
   if (method === "DELETE") {
-    return axios.delete(url, { data, headers: config.headers });
+    return await axios.delete(url, { data, headers: config.headers });
   }
 
-  return axios.get(url, {
+  return await axios.get(url, {
     ...config,
     data,
     responseType,
