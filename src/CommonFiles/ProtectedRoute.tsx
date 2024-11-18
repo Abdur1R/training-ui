@@ -4,7 +4,12 @@ import { UserContext } from "../App";
 import SessionActive from "../CommonAPIs/SessionApi";
 
 const ProtectedRoute = ({ children }: any) => {
-  // const [userDetails, updateUserDetails] = useContext<any>(UserContext);
+  const [userDetails, updateUserDetails] = useContext<any>(UserContext);
+
+  if (userDetails.guest) {
+    return children;
+  }
+
   // const location = useLocation();
   // console.log("location", location);
   const isActive = SessionActive();

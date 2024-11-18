@@ -33,16 +33,22 @@ const TodoList = () => {
       };
       newTask["id"] = tasks.length + 1;
       tasks.push(newTask);
-      ajaxCall({ url: "toDoList/save", data: [newTask], method: "POST" }).then(
-        (response) => {
+      if (userDetails.guest) {
+        setState((prev) => ({ ...prev, tasks }));
+      } else {
+        ajaxCall({
+          url: "toDoList/save",
+          data: [newTask],
+          method: "POST",
+        }).then((response) => {
           if (response && response.status === 200) {
             console.log("response", response);
             setState((prev) => ({ ...prev, tasks }));
           } else {
             console.log("toDoList/save API Failed");
           }
-        }
-      );
+        });
+      }
     } else {
       message.error({ content: "Please enter the task name!", duration: 2 });
     }
@@ -53,19 +59,26 @@ const TodoList = () => {
     // const index = tasks.findIndex((task) => task.taskTitle === taskName);
     // tasks.splice(index, 1);
     // setState((prev)=>({ ...prev, tasks:prev.tasks.filter((item)) }));
-    ajaxCall({ url: `toDoList/delete/${date}`, method: "DELETE" }).then(
-      (response) => {
-        if (response.status === 200) {
-          let newData: any = [];
-          response.data.forEach((item: any, index: number) => {
-            newData.push({ ...item, id: index + 1 });
-          });
-          setState((prev) => ({ ...prev, tasks: newData }));
-        } else {
-          console.log("toDoList/delete API Failed!");
+    if (userDetails.guest) {
+      setState((prev: any) => ({
+        ...prev,
+        tasks: prev.tasks.filter((item: any) => item.date !== date),
+      }));
+    } else {
+      ajaxCall({ url: `toDoList/delete/${date}`, method: "DELETE" }).then(
+        (response) => {
+          if (response.status === 200) {
+            let newData: any = [];
+            response.data.forEach((item: any, index: number) => {
+              newData.push({ ...item, id: index + 1 });
+            });
+            setState((prev) => ({ ...prev, tasks: newData }));
+          } else {
+            console.log("toDoList/delete API Failed!");
+          }
         }
-      }
-    );
+      );
+    }
   };
 
   const handleFilterChange = (filter: any) => {
@@ -97,11 +110,17 @@ const TodoList = () => {
       }
       return task;
     });
-    ajaxCall({ url: "toDoList/update", method: "PUT", data: updatedObj }).then(
-      (response) => {
+    if (userDetails.guest) {
+      setState({ ...state, tasks: updatedTasks });
+    } else {
+      ajaxCall({
+        url: "toDoList/update",
+        method: "PUT",
+        data: updatedObj,
+      }).then((response) => {
         setState({ ...state, tasks: updatedTasks });
-      }
-    );
+      });
+    }
   };
 
   const GetList = () => {
@@ -119,9 +138,9 @@ const TodoList = () => {
   // console.log("Tasks", tasks);
 
   useEffect(() => {
-    if (localStorage.getItem("active") === "true" && userDetails?.active) {
-      GetList();
-    }
+    // if (localStorage.getItem("active") === "true" && userDetails?.active) {
+    GetList();
+    // }
   }, []);
 
   return (

@@ -10,7 +10,7 @@ const SignIn = () => {
   const [state, updateState] = useState({});
   const [userDetails, updateUserDetails] = useContext<any>(UserContext);
   const navigate = useNavigate();
-  
+
   const fetchUserDetails = ({
     userName,
     password,
@@ -42,15 +42,25 @@ const SignIn = () => {
   };
 
   return (
-    <Form className="signIn" onFinish={fetchUserDetails}>
-      <FormItem label={"User Name"} formName="userName" />
-      <FormItem label={"Password"} formName="password" />
-      <Form.Item style={{ marginTop: "70px" }}>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
-    </Form>
+    <>
+      <Form className="signIn" onFinish={fetchUserDetails}>
+        <FormItem label={"User Name"} formName="userName" />
+        <FormItem label={"Password"} formName="password" />
+        <Form.Item style={{ marginTop: "70px" }}>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
+      <Button
+        onClick={() => {
+          navigate("/");
+          updateUserDetails((prev: any) => ({ ...prev, guest: true }));
+        }}
+      >
+        Guest User
+      </Button>
+    </>
   );
 };
 
