@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/training-ui/static/css/main.77c98e4f.css",
-    "main.js": "/training-ui/static/js/main.be96cfc8.js",
+    "main.css": "/training-ui/static/css/main.b1d03bf8.css",
+    "main.js": "/training-ui/static/js/main.3465f823.js",
     "static/js/453.a3cf7a4b.chunk.js": "/training-ui/static/js/453.a3cf7a4b.chunk.js",
     "static/media/ProfilrPic.png": "/training-ui/static/media/ProfilrPic.894e69feed992d258d51.png",
     "static/media/background-img.gif": "/training-ui/static/media/background-img.0315d737e1cb4a720c7b.gif",
     "static/media/LeetCode.svg": "/training-ui/static/media/LeetCode.64860f5502c252efcf87bb690c86b005.svg",
     "static/media/to-do-list.svg": "/training-ui/static/media/to-do-list.55f2c6bb73174ad64377222d2eb92f75.svg",
-    "static/media/Skills.svg": "/training-ui/static/media/Skills.945572629930702f543a4c4e9ff8953f.svg",
-    "static/media/LinkedIn.svg": "/training-ui/static/media/LinkedIn.1bd58114a46a6828ad2d08f3a40ca909.svg",
-    "static/media/Instagram.svg": "/training-ui/static/media/Instagram.bbfb8661737f42d9b1238115c966ad53.svg",
+    "static/media/Skills.svg": "/training-ui/static/media/Skills.1fd87e21c44bf4813e0c7613822ac746.svg",
+    "static/media/LinkedIn.svg": "/training-ui/static/media/LinkedIn.a9717a8db76d634510237657584a2577.svg",
+    "static/media/Instagram.svg": "/training-ui/static/media/Instagram.42476d27ee570a43e3a191490fd1e209.svg",
     "static/media/OpenLink.svg": "/training-ui/static/media/OpenLink.95f25bef5e5bd8e1b7e2b9980d6c7f2f.svg",
     "static/media/Twitter.svg": "/training-ui/static/media/Twitter.d7fbb164cba06b66b16a63896394af78.svg",
     "static/media/github-mark.svg": "/training-ui/static/media/github-mark.6fa18895f6e6c7772cab7049f7e05f59.svg",
     "index.html": "/training-ui/index.html",
-    "main.77c98e4f.css.map": "/training-ui/static/css/main.77c98e4f.css.map",
-    "main.be96cfc8.js.map": "/training-ui/static/js/main.be96cfc8.js.map",
+    "main.b1d03bf8.css.map": "/training-ui/static/css/main.b1d03bf8.css.map",
+    "main.3465f823.js.map": "/training-ui/static/js/main.3465f823.js.map",
     "453.a3cf7a4b.chunk.js.map": "/training-ui/static/js/453.a3cf7a4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.77c98e4f.css",
-    "static/js/main.be96cfc8.js"
+    "static/css/main.b1d03bf8.css",
+    "static/js/main.3465f823.js"
   ]
 }
