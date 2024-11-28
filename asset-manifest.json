@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/training-ui/static/css/main.b1d03bf8.css",
-    "main.js": "/training-ui/static/js/main.3465f823.js",
+    "main.css": "/training-ui/static/css/main.907fa155.css",
+    "main.js": "/training-ui/static/js/main.cd757587.js",
     "static/js/453.a3cf7a4b.chunk.js": "/training-ui/static/js/453.a3cf7a4b.chunk.js",
     "static/media/ProfilrPic.png": "/training-ui/static/media/ProfilrPic.894e69feed992d258d51.png",
     "static/media/background-img.gif": "/training-ui/static/media/background-img.0315d737e1cb4a720c7b.gif",
@@ -14,12 +14,12 @@
     "static/media/Twitter.svg": "/training-ui/static/media/Twitter.d7fbb164cba06b66b16a63896394af78.svg",
     "static/media/github-mark.svg": "/training-ui/static/media/github-mark.6fa18895f6e6c7772cab7049f7e05f59.svg",
     "index.html": "/training-ui/index.html",
-    "main.b1d03bf8.css.map": "/training-ui/static/css/main.b1d03bf8.css.map",
-    "main.3465f823.js.map": "/training-ui/static/js/main.3465f823.js.map",
+    "main.907fa155.css.map": "/training-ui/static/css/main.907fa155.css.map",
+    "main.cd757587.js.map": "/training-ui/static/js/main.cd757587.js.map",
     "453.a3cf7a4b.chunk.js.map": "/training-ui/static/js/453.a3cf7a4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1d03bf8.css",
-    "static/js/main.3465f823.js"
+    "static/css/main.907fa155.css",
+    "static/js/main.cd757587.js"
   ]
 }
