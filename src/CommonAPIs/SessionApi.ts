@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 
 const SessionActive = () => {
   const [userDetails, updateUserDetails] = useContext<any>(UserContext);
-  const userEmail = userDetails?.userEmail ?? localStorage.getItem("userEmail");
+  const userEmail = userDetails?.userEmail || localStorage.getItem("userEmail");
   const [returnVal, setReturnVal] = useState<boolean | null>(null);
 
   const helper = async () => {
