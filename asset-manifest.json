@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/training-ui/static/css/main.907fa155.css",
-    "main.js": "/training-ui/static/js/main.cd757587.js",
+    "main.css": "/training-ui/static/css/main.927be562.css",
+    "main.js": "/training-ui/static/js/main.4dbfab77.js",
     "static/js/453.a3cf7a4b.chunk.js": "/training-ui/static/js/453.a3cf7a4b.chunk.js",
     "static/media/ProfilrPic.png": "/training-ui/static/media/ProfilrPic.894e69feed992d258d51.png",
     "static/media/background-img.gif": "/training-ui/static/media/background-img.0315d737e1cb4a720c7b.gif",
     "static/media/LeetCode.svg": "/training-ui/static/media/LeetCode.64860f5502c252efcf87bb690c86b005.svg",
-    "static/media/to-do-list.svg": "/training-ui/static/media/to-do-list.55f2c6bb73174ad64377222d2eb92f75.svg",
+    "static/media/ToDoListImg3.jpg": "/training-ui/static/media/ToDoListImg3.cc3bfa4eb4e504b68e2c.jpg",
+    "static/media/JobsPortalImg.svg": "/training-ui/static/media/JobsPortalImg.071b988cd19f900d0c670ac350b57cfe.svg",
     "static/media/Skills.svg": "/training-ui/static/media/Skills.1fd87e21c44bf4813e0c7613822ac746.svg",
     "static/media/LinkedIn.svg": "/training-ui/static/media/LinkedIn.a9717a8db76d634510237657584a2577.svg",
     "static/media/Instagram.svg": "/training-ui/static/media/Instagram.42476d27ee570a43e3a191490fd1e209.svg",
@@ -14,12 +15,12 @@
     "static/media/Twitter.svg": "/training-ui/static/media/Twitter.d7fbb164cba06b66b16a63896394af78.svg",
     "static/media/github-mark.svg": "/training-ui/static/media/github-mark.6fa18895f6e6c7772cab7049f7e05f59.svg",
     "index.html": "/training-ui/index.html",
-    "main.907fa155.css.map": "/training-ui/static/css/main.907fa155.css.map",
-    "main.cd757587.js.map": "/training-ui/static/js/main.cd757587.js.map",
+    "main.927be562.css.map": "/training-ui/static/css/main.927be562.css.map",
+    "main.4dbfab77.js.map": "/training-ui/static/js/main.4dbfab77.js.map",
     "453.a3cf7a4b.chunk.js.map": "/training-ui/static/js/453.a3cf7a4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.907fa155.css",
-    "static/js/main.cd757587.js"
+    "static/css/main.927be562.css",
+    "static/js/main.4dbfab77.js"
   ]
 }
