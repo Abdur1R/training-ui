@@ -1,0 +1,22 @@
+.cardsList {
+    margin: 100px;
+    display: flex;
+    justify-content: space-around;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 150px;
+        height: 200px;
+        background-color: #fff;
+        transition: 1s;
+        cursor: pointer;
+
+        &:hover {
+            width: 160px !important;
+            height: 210px !important;
+            transition: 1s;
+        }
+    }
+}
