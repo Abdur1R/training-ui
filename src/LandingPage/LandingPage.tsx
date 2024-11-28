@@ -41,6 +41,7 @@ const LandingPage = () => {
 
   return (
     <ProtectedRoute>
+      Projects
       <div className="cardsList">
         {ProjectsList.map((item: any) => (
           <div onClick={() => onCardClick(item.path)}>
