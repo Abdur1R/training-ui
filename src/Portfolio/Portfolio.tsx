@@ -24,6 +24,7 @@ import GitHub from "../Pictures/github-mark.svg";
 import LeetCode from "../Pictures/LeetCode.svg";
 import Instagram from "../Pictures/Instagram.svg";
 import Twitter from "../Pictures/Twitter.svg";
+import Projects from "../Projects/Projects";
 
 type stateType = {
   modeSwitch: boolean;
@@ -199,9 +200,8 @@ const PortFolio: React.FC = (): ReactElement => {
         {/* )} */}
       </div>
       <div
-        className={`${
-          state.modeSwitch ? "portfolio-body darkMode" : "portfolio-body"
-        } ${state.sideBar ? "sideOpen" : "sideClose"}`}
+        className={`${state.modeSwitch ? "portfolio-body darkMode" : "portfolio-body"
+          } ${state.sideBar ? "sideOpen" : "sideClose"}`}
       >
         <SectionBody
           darkMode={state.modeSwitch}
@@ -281,6 +281,13 @@ const PortFolio: React.FC = (): ReactElement => {
           body={<EducationSection />}
           subHead={""}
           id={"/portfolio/education"}
+        />
+        <SectionBody
+          darkMode={state.modeSwitch}
+          head={"Projects"}
+          body={<Projects />}
+          subHead={""}
+          id={"/portfolio/projects"}
         />
         <SectionBody
           darkMode={state.modeSwitch}
