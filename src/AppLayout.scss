@@ -1,5 +1,23 @@
 .mainHeader {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    min-height: 65px;
-    background-color: red;
+    min-height: 60px;
+    background-color: white;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0.1px 0.3px grey;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0px 30px;
+    align-items: center;
+
+    .userName {}
+
+    .profPic {
+        padding: 3px 6px 5px 6px;
+        border-radius: 50%;
+        background-color: rgb(211, 211, 211);
+        cursor: pointer;
+    }
 }

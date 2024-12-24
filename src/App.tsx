@@ -14,6 +14,7 @@ export const UserContext = createContext({});
 
 const App = () => {
   const [userDetails, updateUserDetails] = useState<any>({ userEmail: "" });
+
   return (
     <div className="App">
       <UserContext.Provider value={[userDetails, updateUserDetails]}>

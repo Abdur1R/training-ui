@@ -119,7 +119,7 @@ const JobPortal = () => {
 
   return (
     // <ProtectedRoute>
-    <div className="d-flex-col gap-25 jobs">
+    <div className="d-flex-col gap-25 jobs"    >
       <b className="mainTitle">Job Portal</b>
       <div className="d-flex-row gap10">
         <Search

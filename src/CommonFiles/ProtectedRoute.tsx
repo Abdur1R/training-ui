@@ -5,6 +5,8 @@ import SessionActive from "../CommonAPIs/SessionApi";
 
 const ProtectedRoute = ({ children }: any) => {
   const [userDetails, updateUserDetails] = useContext<any>(UserContext);
+  console.log("userDetails", userDetails);
+  console.log("localStorage", localStorage);
 
   if (userDetails.guest) {
     return children;

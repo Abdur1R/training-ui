@@ -11,20 +11,18 @@ const SessionActive = () => {
     const response: any = await ajaxCall({
       url: `api/session/active?userId=${userEmail}`,
     });
-    if (response) {
+    setReturnVal(response.data || false);
+    if (response && response.data) {
       console.log("response from active api", response);
-      setReturnVal(response.data);
       updateUserDetails((prev: any) => ({
         ...prev,
         active: response.data,
         userEmail,
       }));
-      if (response) {
-        localStorage.setItem("userEmail", userEmail);
-        localStorage.setItem("active", `${response.data}`);
-      } else {
-        localStorage.clear();
-      }
+      localStorage.setItem("userEmail", userEmail);
+      localStorage.setItem("active", `${response.data}`);
+    } else {
+      localStorage.clear();
     }
   };
 
