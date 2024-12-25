@@ -5,6 +5,7 @@ import Heart from "./Heart/Heart.tsx";
 import JobPortal from "./JobPortal/JobPortal.tsx";
 import LandingPage from "./LandingPage/LandingPage.tsx";
 import PortFolio from "./Portfolio/Portfolio.tsx";
+import Splash from "./Portfolio/Splash.js";
 import SignIn from "./SignIn/SignIn.tsx";
 import SignUp from "./SignUp/SignUp.tsx";
 import TodoList from "./ToDoList/ToDoList.tsx";
@@ -40,7 +41,7 @@ const AllRoutes = [
   },
   {
     path: "/portfolio/:section",
-    component: PortFolio,
+    component: Splash,
   },
   {
     path: "/cricketgame",
