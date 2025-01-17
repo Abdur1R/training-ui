@@ -168,6 +168,16 @@ const PortFolio: React.FC = (): ReactElement => {
               ),
             },
             {
+              key: "projects",
+              href: "#/portfolio/projects",
+              title: state.sideBar ? (
+                "Projects"
+              ) : (
+                <BookOutlined alt="About" />
+              ),
+              //   title: "Experience",
+            },
+            {
               key: "skills",
               href: "#/portfolio/skills",
               title: state.sideBar ? (
@@ -235,7 +245,7 @@ const PortFolio: React.FC = (): ReactElement => {
                     <Button className="downloadBtn">
                       <a
                         href="/training-ui/Resume1909.pdf"
-                        download="ABDUR RAHMAN RESUME.pdf"
+                        download="ABDUR_RAHMAN_RESUME.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{ textDecoration: "none", color: "inherit" }}
